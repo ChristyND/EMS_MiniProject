@@ -5,14 +5,14 @@ import java.util.Date;
 public class Employee {
     long emp_id;
     String firstName, lastName;
-    Date empDate;
+    String empDate;
     Department dept;
 
     public Employee (){
 
     }
 
-    public Employee(String firstName, String lastName, Date empDate, Department dept) {
+    public Employee(String firstName, String lastName, String empDate, Department dept) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.empDate = empDate;
@@ -20,7 +20,7 @@ public class Employee {
         setNewID();
     }
 
-    public Employee(long emp_id, String firstName, String lastName, Date empDate, Department dept) {
+    public Employee(long emp_id, String firstName, String lastName, String empDate, Department dept) {
         this.emp_id = emp_id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -62,11 +62,18 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public Date getEmpDate() {
+    public String getEmpDate() {
         return empDate;
     }
 
-    public void setEmpDate(Date empDate) {
+    public void setEmpDate(String empDate) {
         this.empDate = empDate;
     }
+
+    @Override
+    public String toString() {
+        return "Employee [emp_id=" + emp_id + ", firstName=" + firstName + ", lastName=" + lastName + ", empDate="
+                + empDate + ", dept=" + dept + "]";
+    }
+    
 }
